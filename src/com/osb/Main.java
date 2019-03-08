@@ -29,9 +29,11 @@ public class Main {
         //#################  Super Hero Demo ###############################
         Mapper mapper = new Mapper("Batman", Behavior.CRAWL, Behavior.FLY, Behavior.JUMP);
         Mapper mapper1 = new Mapper("SuperMan", Behavior.CRAWL, Behavior.GENERATEFIRE, Behavior.JUMP);
+        Mapper mapper2 = new Mapper("Thor", Behavior.CRAWL, Behavior.SWIM, Behavior.JUMP, Behavior.FLY);
 
         mapper.mapSuperHeroToBehaviors();
         mapper1.mapSuperHeroToBehaviors();
+        mapper2.mapSuperHeroToBehaviors();
 
         for (Map.Entry<SuperHero, AddBehavioral> entry : mapper.getMap().entrySet()) {
             System.out.print(entry.getKey().getName());
@@ -41,6 +43,13 @@ public class Main {
         System.out.println("");
 
         for (Map.Entry<SuperHero, AddBehavioral> entry : mapper1.getMap().entrySet()) {
+            System.out.print(entry.getKey().getName());
+            System.out.print(entry.getValue().getBehaviors());
+        }
+
+        System.out.println("");
+
+        for (Map.Entry<SuperHero, AddBehavioral> entry : mapper2.getMap().entrySet()) {
             System.out.print(entry.getKey().getName());
             System.out.print(entry.getValue().getBehaviors());
         }
